@@ -1,6 +1,10 @@
 <?php
 /**
- * @filesource projects/youtube/index.php.
+ * @filesource projects/site/index.php.
+ *
+ * Main entry point for the Site project.
+ * This file initializes the Kotchasan Framework and starts the web application.
+ * For more information, please visit: https://www.kotchasan.com/
  *
  * @copyright 2016 Goragod.com
  * @license https://www.kotchasan.com/license/
@@ -22,8 +26,9 @@ define('DEBUG', 0);
  */
 define('DB_LOG', false);
 
-// load Kotchasan
+// Load Kotchasan Framework
 include '../../Kotchasan/load.php';
+include '../../InertiaKotchasan/load.php';
 
-// Initial Kotchasan Framework
+// Initialize Kotchasan Framework and start the web application
 Kotchasan::createWebApplication()->run();

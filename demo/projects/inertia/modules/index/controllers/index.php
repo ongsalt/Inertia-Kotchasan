@@ -13,7 +13,10 @@
 
 namespace Index\Index;
 
+use InertiaKotchasan\Inertia;
+use Kotchasan\Date;
 use Kotchasan\Http\Request;
+use Kotchasan\Template;
 
 /**
  * Render the index page.
@@ -31,7 +34,15 @@ class Controller extends \Kotchasan\Controller
      */
     public function index(Request $request)
     {
-        // Create and render the view for the index page.
-        \Index\Index\View::create()->render();
+        // Initialize Template
+        Template::init(self::$cfg->skin);
+
+        // If no module selected, set it to 'home'
+        $module = $request->get('module', 'home')->toString();
+
+        Inertia::render('Welcome', [
+            'canLogin' => true,
+            'canRegister' => true,
+        ]);
     }
 }
