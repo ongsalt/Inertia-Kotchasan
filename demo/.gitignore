@@ -6,6 +6,8 @@
 robots.txt
 datas/
 settings/*
+js/inertia/
+node_modules/
 projects/test/
 nbproject/*
 documents.sh
