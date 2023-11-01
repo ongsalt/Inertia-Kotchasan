@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @filesource modules/index/controllers/index.php
  *
@@ -13,6 +14,7 @@
 
 namespace Index\Index;
 
+use Error;
 use Kotchasan\Date;
 use Kotchasan\Http\Request;
 use Kotchasan\Template;
@@ -24,37 +26,31 @@ use Kotchasan\Template;
  */
 class Controller extends \Kotchasan\Controller
 {
-    /**
-     * Render the index page.
-     *
-     * This method is responsible for rendering the index page of the Index module.
-     *
-     * @param Request $request The HTTP request object.
-     */
+
     public function index(Request $request)
     {
-        // Initialize Template
-        Template::init(self::$cfg->skin);
+        // รับค่าจาก $_GET['module'] ถ้าไม่มีการส่งค่ามาจะคืนค่า home โดยคืนค่าเป็น string ที่ตัวแปร module
+        // method filter() กำหนดให้รับค่าเฉพาะตัวอักษรที่กำหนดเท่านั้น
+        $module = $request->get('module', 'index')->filter('a-z');
 
-        // If no module selected, set it to 'home'
-        $module = $request->get('module', 'home')->toString();
+        // ตรวจสอบว่ามี Controller ของหน้าที่เรียกหรือไม่
+        // เช่น Index\Home\Controller สำหรับหน้า home
+        // ถ้าไม่พบหน้าที่เรียกจะคืนค่า Index\Pagenotfound\Controller
+        $class = 'Index\\' . ucfirst($module) . '\Controller';
+        if (method_exists($class, 'execute')) {
+            // โหลดหน้าที่เรียก
+            $content = createClass($class);
+        } else {
+            // โหลดหน้า Pagenotfound เมื่อไม่พบหน้าที่เรียก
+            $content = 'notfound';
+        }
+        // เริ่มต้นใช้งาน View
 
-        // Create a new View
-        $view = new \Kotchasan\View();
+        $content->execute($request);
+    }
 
-        // Set the template contents
-        $view->setContents([
-            // Menu
-            '/{MENU}/' => createClass('Index\Menu\Controller')->render($module),
-            // Web title
-            '/{TITLE}/' => self::$cfg->web_title,
-            // Load selected page (HTML)
-            '/{CONTENT}/' => Template::load('', '', $module),
-            // Display current time
-            '/{TIME}/' => Date::format()
-        ]);
-
-        // Render HTML and output
-        echo $view->renderHTML();
+    public function execute(Request $request)
+    {
+        echo 'red';
     }
 }

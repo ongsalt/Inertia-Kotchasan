@@ -134,6 +134,14 @@
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Dashboard.vue"
   },
+  "resources/js/Pages/Page2.vue": {
+    "file": "js\\inertia/Page2-1609e292.js",
+    "imports": [
+      "_index.esm-eb830b99.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Page2.vue"
+  },
   "resources/js/Pages/Profile/Edit.vue": {
     "file": "js\\inertia/Edit-9b0c08fa.js",
     "imports": [
@@ -190,7 +198,7 @@
     "css": [
       "js\\inertia/Welcome-665689a9.css"
     ],
-    "file": "js\\inertia/Welcome-ceb3679b.js",
+    "file": "js\\inertia/Welcome-2200f184.js",
     "imports": [
       "_index.esm-eb830b99.js"
     ],
@@ -206,13 +214,14 @@
       "resources/js/Pages/Auth/ResetPassword.vue",
       "resources/js/Pages/Auth/VerifyEmail.vue",
       "resources/js/Pages/Dashboard.vue",
+      "resources/js/Pages/Page2.vue",
       "resources/js/Pages/Profile/Edit.vue",
       "resources/js/Pages/Profile/Partials/DeleteUserForm.vue",
       "resources/js/Pages/Profile/Partials/UpdatePasswordForm.vue",
       "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.vue",
       "resources/js/Pages/Welcome.vue"
     ],
-    "file": "js\\inertia/app-11c7a35f.js",
+    "file": "js\\inertia/app-cd052e93.js",
     "imports": [
       "_index.esm-eb830b99.js"
     ],
@@ -228,13 +237,14 @@
       "resources/js/Pages/Auth/ResetPassword.vue",
       "resources/js/Pages/Auth/VerifyEmail.vue",
       "resources/js/Pages/Dashboard.vue",
+      "resources/js/Pages/Page2.vue",
       "resources/js/Pages/Profile/Edit.vue",
       "resources/js/Pages/Profile/Partials/DeleteUserForm.vue",
       "resources/js/Pages/Profile/Partials/UpdatePasswordForm.vue",
       "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.vue",
       "resources/js/Pages/Welcome.vue"
     ],
-    "file": "js\\inertia/index-8efe470c.js",
+    "file": "js\\inertia/index-7fbffa12.js",
     "imports": [
       "_index.esm-eb830b99.js"
     ],

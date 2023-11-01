@@ -15,16 +15,11 @@ class Template
     /**
      * Compiles the "@inertia" directive.
      */
-    public function compile(string $component, array $pageProps, string $url, string $version)
+    public function compile(PageData $pageData)
     {
         $id = 'app';
-        
-        $pageData['component'] = $component;
-        $pageData['props'] = $pageProps;
-        $pageData['url'] = $url;
-        $pageData['version'] = $version;
-        
-        $appDiv =  "<div id='" . $id . "' data-page='" . json_encode($pageData) . "'></div>";
+
+        $appDiv =  "<div id='" . $id . "' data-page='" . $pageData->toJson() . "'></div>";
 
         $this->html = preg_replace('/(@inertia)\n/', $appDiv, $this->html);
 
@@ -41,5 +36,4 @@ class Template
     {
         return '<script crossorigin src="' . $bundleUrl . '" type="module"></script>';
     }
-
 }
