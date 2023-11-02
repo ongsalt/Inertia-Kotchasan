@@ -1,6 +1,6 @@
 <?php
 
-namespace Ongsalt\InertiaKotchasan;
+namespace InertiaKotchasan;
 
 class Config
 {

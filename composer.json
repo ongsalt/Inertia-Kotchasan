@@ -2,15 +2,15 @@
     "name": "ongsalt/inertia-kotchasan",
     "description": "Inertia adapter for Kotchasan",
     "type": "library",
-    "license": "MIT License",
+    "license": "mit",
     "autoload": {
         "psr-4": {
-            "Ongsalt\\InertiaKotchasan\\": "src/"
+            "InertiaKotchasan\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "Oachi",
+            "name": "Ongsalt",
             "email": "ongsa.srp.mkm@gmail.com"
         }
     ],

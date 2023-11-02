@@ -1,6 +1,6 @@
 <?php
 
-namespace Ongsalt\InertiaKotchasan\Router;
+namespace InertiaKotchasan\Router;
 
 use Kotchasan\Router;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ongsalt\InertiaKotchasan\Router;
+namespace InertiaKotchasan\Router;
 
 /**
  * Router that map each route to controller in this format.
