@@ -1,6 +1,6 @@
 <?php
 
-namespace InertiaKotchasan;
+namespace Ongsalt\InertiaKotchasan;
 
 class Resolver
 {
