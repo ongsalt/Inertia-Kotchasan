@@ -23,7 +23,6 @@ class Inertia
             // Compile to html using php props -> json
             // Send it
 
-
             $template = new Template();
 
             $html = $template->compile(new PageData($pageName, $props, $pageUrl, '45'));

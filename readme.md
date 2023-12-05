@@ -7,8 +7,11 @@
 
 This is an Inertia adapter for Kotchasan.
 
+### Notes
+Kotchasan repository on packagist haven't been updated for long time now. You can download the latest directly from maintainer's github profile.  
+
 ## Setting up (for now)
-Create a vite project. Please use vite config file from `demo/` as a reference.
+Create a vite project. Please use vite config file from `example/` as a reference.
 
 Then [set up inertia for client-side](https://inertiajs.com/client-side-setup). 
 

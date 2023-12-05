@@ -1,0 +1,33 @@
+{
+    "name": "ongsalt/inertia-kotchasan-exmaple",
+    "type": "project",
+    "require": {
+        "goragod/kotchasan": "dev-main",
+        "ongsalt/inertia-kotchasan": "0.0.1"
+    },
+    "license": "mit",
+    "autoload": {
+        "psr-4": {
+            "Ongsalt\\InertiaKotchasanExmaple\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ongsalt",
+            "email": "ongsa.srp.mkm@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../",
+            "options": {
+                "symlink": true
+            }    
+        }
+    ],
+    "scripts": {
+        "dev": "php -S localhost:8000 src/index.php"
+    }
+}

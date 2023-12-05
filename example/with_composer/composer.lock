@@ -1,0 +1,100 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "b787c4386044c55e3e490779f408a741",
+    "packages": [
+        {
+            "name": "goragod/kotchasan",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/goragod/kotchasan.git",
+                "reference": "6111bef39a2cdeea7f3e70a74641c2a8cd1746b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/goragod/kotchasan/zipball/6111bef39a2cdeea7f3e70a74641c2a8cd1746b0",
+                "reference": "6111bef39a2cdeea7f3e70a74641c2a8cd1746b0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "Kotchasan/load.php"
+                ],
+                "psr-4": {
+                    "": "Kotchasan/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Goragod Wiriya",
+                    "email": "admin@goragod.com",
+                    "homepage": "http://www.goragod.com"
+                }
+            ],
+            "description": "Kotchasan Web Framework",
+            "homepage": "http://www.kotchasan.com",
+            "keywords": [
+                "framework",
+                "kotchasan",
+                "php"
+            ],
+            "support": {
+                "source": "https://github.com/goragod/kotchasan/tree/main"
+            },
+            "time": "2022-09-28T07:54:15+00:00"
+        },
+        {
+            "name": "ongsalt/inertia-kotchasan",
+            "version": "0.0.1",
+            "dist": {
+                "type": "path",
+                "url": "../..",
+                "reference": "d6650f7b5275dd5c03a40e5e04cc8aba607cf78c"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "InertiaKotchasan\\": "src/"
+                }
+            },
+            "license": [
+                "mit"
+            ],
+            "authors": [
+                {
+                    "name": "Ongsalt",
+                    "email": "ongsa.srp.mkm@gmail.com"
+                }
+            ],
+            "description": "Inertia adapter for Kotchasan",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "goragod/kotchasan": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
+}
