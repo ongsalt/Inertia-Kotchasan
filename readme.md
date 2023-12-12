@@ -8,14 +8,29 @@
 This is an Inertia adapter for Kotchasan.
 
 ### Notes
-Kotchasan repository on packagist haven't been updated for long time now. You can download the latest directly from maintainer's github profile.  
+Kotchasan repository on packagist haven't been updated for long time now. You can download the latest directly from maintainer's github profile. 
 
-## Setting up (for now)
-Create a vite project. Please use vite config file from `example/` as a reference.
+## Setting up
+I assumed you already have a Kotchasan project. You also (obviously) need node installed as well.
 
-Then [set up inertia for client-side](https://inertiajs.com/client-side-setup). 
+Install vite and all the frontend stuff. Please use look at vite config file from `example/` as a reference.
 
-Vite will build everything in `resource/`(which is frontend-related file) and output it to `/js/inertia` that we need to serve it as static files (like everything else in `/js`).
+Then set `build.rollupOptions.input` to the js entry point. Don't forget to change `base`, `build.outDir` and `build.outDir`. We need to serve it(dist) as static files.
+
+Then create adapter config file at settings/inertia.php using the same config as vite
+```php
+return [
+    // All frontend related stuff go in here. It will be built using Vite
+    'resourcePath' => '/resources',
+
+    // This is where you serve all static content. Beware of vite base path. 
+    'distPath' => '/assets',
+];
+```
+
+You can now [set up inertia for client-side](https://inertiajs.com/client-side-setup). 
+
+| Setup script may or may not be created.
 
 ## Usage
 Just call `Inertia::render($pageName, $props)` in a controller. 
@@ -38,6 +53,7 @@ class Controller extends \Kotchasan\Controller
 }
 ```
 
+
 ## What's working
 - Sending page dynamicly
 
@@ -50,6 +66,10 @@ class Controller extends \Kotchasan\Controller
 - Lazy data evaluation
 - Asset versioning
 - Everything else
+
+## Todo 
+- read config from /settings/inertia.php
+
 
 ## Q&A
 

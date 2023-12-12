@@ -28,6 +28,6 @@
         }
     ],
     "scripts": {
-        "dev": "php -S localhost:8000 src/index.php"
+        "dev": "php -S localhost:8000 index.php"
     }
 }
