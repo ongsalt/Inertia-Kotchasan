@@ -12,7 +12,7 @@ if (Inertia::isStaticFilePath($_SERVER["REQUEST_URI"])) {
     return false;
 }
 
-Inertia::init(__DIR__ . '/settings/inertia.php');
+Inertia::init();
 
 $app = Kotchasan::createWebApplication();
 

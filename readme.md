@@ -43,7 +43,7 @@ Mostly copy from Kotchasan example.
 ```php
 class Controller extends \Kotchasan\Controller
 {
-    public function execute(Request $request)
+    public function index(Request $request)
     {
         Inertia::render('Welcome', [
             'canLogin' => true,
@@ -56,10 +56,11 @@ class Controller extends \Kotchasan\Controller
 
 ## What's working
 - Sending page dynamicly
+- Redirects
 
 ## What not
+- Layout
 - Shared data
-- Redirects
 - Forms submission
 - File upload
 - Validation
@@ -68,7 +69,10 @@ class Controller extends \Kotchasan\Controller
 - Everything else
 
 ## Todo 
-- read config from /settings/inertia.php
+- read config from /settings/inertia.php using Kotchasan api
+- do Singleton for config
+- Shared Data
+- Assets versioning middleware
 
 
 ## Q&A

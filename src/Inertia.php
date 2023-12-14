@@ -11,13 +11,17 @@ use Kotchasan\Http\Response;
 // 
 
 class Inertia
-{
-    static Config $config;
-    
-    public static function init(string $configPath) {
-        Config::load($configPath);
+{    
+    /**
+     * This need to be called after APP_PATH is initialized. (after Kotchasan got autoloaded)
+     */
+    public static function init() {
+        Config::load(APP_PATH .  '/settings/inertia.php');
     }
 
+    /**
+     * Render the page
+     */
     public static function render(string $pageName, array $props = [])
     {
         $pageUrl = $_SERVER['REQUEST_URI'];
@@ -41,6 +45,16 @@ class Inertia
             ->withContent($pageData->toJson())->send();
     }
 
+    /**
+     * Redirect
+     */
+    static function location(string $url) {
+        header('Location: ' . $url);
+    }
+
+    /**
+     * Use to determine which file should be handled by the web server not php
+     */
     static function isStaticFilePath(string $url): string | null {
         $splitted = explode("/", $url);
         $path = array_slice($splitted, 1);
