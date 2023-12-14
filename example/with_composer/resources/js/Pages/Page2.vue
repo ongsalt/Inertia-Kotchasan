@@ -1,6 +1,13 @@
 <script setup>
 import { Link } from '@inertiajs/vue3';
 
+defineProps({
+    serverTime: {
+        type: String,
+        required: true,
+    },
+});
+
 </script>
 
 <template>
@@ -9,7 +16,11 @@ import { Link } from '@inertiajs/vue3';
         This is page 2
     </h3>
 
-    <Link href="/projects/inertia/">
+    <p>
+        Server time: {{ serverTime }}
+    </p>
+
+    <Link href="/">
         back
     </Link>
 </template>

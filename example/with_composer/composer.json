@@ -29,5 +29,8 @@
     ],
     "scripts": {
         "dev": "php -S localhost:8000 index.php"
+    },
+    "config": {
+        "process-timeout": 0
     }
 }
