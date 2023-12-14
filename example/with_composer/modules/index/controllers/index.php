@@ -8,7 +8,6 @@ use InertiaKotchasan\Inertia;
 
 class Controller extends \Kotchasan\Controller
 {
-
     public function index(Request $request)
     {
         Inertia::render('Welcome', [

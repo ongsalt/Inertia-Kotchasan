@@ -15,8 +15,4 @@ class Controller extends \Kotchasan\Controller
         ]);
     }
 
-    public function gaythai()
-    {
-
-    }
 }

@@ -8,9 +8,8 @@ use InertiaKotchasan\Inertia;
 
 class Controller extends \Kotchasan\Controller
 {
-
     public function index(Request $request)
     {
-        Inertia::location('/index/controller/index');
+        Inertia::location('/');
     }
 }
