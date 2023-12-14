@@ -15,15 +15,12 @@ class Template
     /**
      * Compiles the "@inertia" directive.
      */
-    public function compile(PageData $pageData)
+    public function compile(PageData $pageData): self
     {
         $id = 'app';
-
         $appDiv =  "<div id='" . $id . "' data-page='" . $pageData->toJson() . "'></div>";
-
         $this->html = preg_replace('/(@inertia)\n/', $appDiv, $this->html);
-
-        return $this->html;
+        return $this;
     }
 
 
@@ -32,8 +29,21 @@ class Template
      * 
      * @param string $bundleUrl js bundle url
      */
-    public static function compileHead(array $bundleUrl)
+    public function compileHead(array $bundleUrl): self
     {
-        return '<script crossorigin src="' . $bundleUrl . '" type="module"></script>';
+        $appHead = '<script crossorigin src="' . $bundleUrl . '" type="module"></script>';
+        $this->html = preg_replace('/(@inertiaHead)\n/', $appDiv, $this->html);
+        return $this;
     }
+
+    public function ignoreHead(): self
+    {
+        $this->html = preg_replace('/(@inertiaHead)\n/', '', $this->html);
+        return $this;
+    }
+
+    public function render(): string {
+        return $this->html;
+    }
+
 }

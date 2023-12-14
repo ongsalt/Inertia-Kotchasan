@@ -21,7 +21,7 @@ class Inertia
     public static function render(string $pageName, array $props = [])
     {
         $pageUrl = $_SERVER['REQUEST_URI'];
-        // if not X-Inertia generate html
+        // if not X-Inertia then generate html
         $isXInertia = (isset($_SERVER['HTTP_X_INERTIA']) && ($_SERVER['HTTP_X_INERTIA'] === 'true'));
         if (!$isXInertia) {
             // Lookup for file
@@ -29,20 +29,14 @@ class Inertia
             // Send it
 
             $template = new Template();
-
-            $html = $template->compile(new PageData($pageName, $props, $pageUrl, '45'));
-
+            $html = $template->compile(new PageData($pageName, $props, $pageUrl, '45'))->ignoreHead()->render();
             $response = new Response();
-
-            return $response->withContent($html)->send();
+            return (new Response())->withContent($html)->send();
         };
 
-        // echo 'With X-Inertia';
-
-        $response = new Response();
         $pageData = new PageData($pageName, $props, $pageUrl, '45');
 
-        return $response
+        return (new Response())
             ->withHeader('X-Inertia', 'true')
             ->withContent($pageData->toJson())->send();
     }
