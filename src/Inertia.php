@@ -12,6 +12,11 @@ use Kotchasan\Http\Response;
 
 class Inertia
 {
+    static Config $config;
+    
+    public static function init(string $configPath) {
+        Config::load($configPath);
+    }
 
     public static function render(string $pageName, array $props = [])
     {
@@ -41,4 +46,29 @@ class Inertia
             ->withHeader('X-Inertia', 'true')
             ->withContent($pageData->toJson())->send();
     }
+
+    static function isStaticFilePath(string $url): string | null {
+        $splitted = explode("/", $url);
+        $path = array_slice($splitted, 1);
+        
+        // If url has no following path
+        if (count($path) == 0) {
+            // echo "No path";
+            return null;
+        }
+
+        if ($path[0] != 'static') {
+            // echo "is not '/static'";
+            return null;
+        }
+
+        if (count($path) == 1) {
+            // echo "has path but only '/static'";
+            return null;
+        }
+
+        // echo 'ok';
+        return implode(DIRECTORY_SEPARATOR, array_slice($path, 1));
+    }
+
 }

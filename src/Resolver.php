@@ -2,6 +2,8 @@
 
 namespace InertiaKotchasan;
 
+
+// Unused
 class Resolver
 {
     public $pageUrls = [];
