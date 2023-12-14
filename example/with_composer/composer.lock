@@ -62,7 +62,7 @@
             "dist": {
                 "type": "path",
                 "url": "../..",
-                "reference": "d6650f7b5275dd5c03a40e5e04cc8aba607cf78c"
+                "reference": "975e9beb86f37d3339ff77729c28bef5cdfef27f"
             },
             "type": "library",
             "autoload": {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Index\Index;
+namespace Lmao\Rel;
 
 use \Kotchasan\Http\Request;
 use InertiaKotchasan\Inertia;
@@ -11,12 +11,12 @@ class Controller extends \Kotchasan\Controller
 
     public function index(Request $request)
     {
-        Inertia::render('Welcome');
-        // echo 'From index';
+        // Inertia::render('Welcome');
         // echo $request->getUri();
+        echo 'rel';
     }
 
-    public function gaythai()
+    public function gaythai(): string
     {
         echo "Gaythai";
     }

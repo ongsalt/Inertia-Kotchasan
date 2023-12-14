@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- <title inertia>{{ config('app.name', 'Laravel') }}</title> -->
+        <title inertia> {APP_NAME} </title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+        <script src="/resources/js/app.js" type="module"></script>
+
+        <!-- Need to change dynamically -->
+        @inertiaHead
+        <!-- <script src="/resources/js/Pages/app.vue" type="module"></script> -->
+    </head>
+    <body class="font-sans antialiased">
+        @inertia
+        <!-- also Need to change dynamically -->
+        <!-- <div id="app" data-page='{"component": "Welcome","props": {},"url": "/build/resources/views/index.html","version":"c32b8e4965f418ad16eaebba1d4e960f"}'></div> -->
+    </body>
+</html>
