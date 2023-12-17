@@ -15,6 +15,7 @@ namespace Index\Test;
 
 use Kotchasan\Http\Request;
 use Kotchasan\Template;
+use InertiaKotchasan\Inertia;
 
 /**
  * Render the index page.
@@ -33,13 +34,6 @@ class Controller extends \Kotchasan\Controller
      */
     public function execute(Request $request)
     {
-        // Initialize Template
-        // If no module selected, set it to 'home'
-        $module = $request->get('module', 'home')->toString();
-
-        // Create a new View
-
-        // Render HTML and output
-        echo "test";
+        Inertia::render('Page2');
     }
 }

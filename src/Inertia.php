@@ -15,8 +15,12 @@ class Inertia
     /**
      * This need to be called after APP_PATH is initialized. (after Kotchasan got autoloaded)
      */
-    public static function init() {
-        Config::load(APP_PATH .  'settings/inertia.php');
+    public static function init(?string $configPath = null) {
+        if ($configPath != null) {
+            Config::load($configPath);
+        } else {
+            Config::load(APP_PATH .  'settings/inertia.php');
+        }
     }
 
     /**

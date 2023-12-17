@@ -18,6 +18,7 @@ use Error;
 use Kotchasan\Date;
 use Kotchasan\Http\Request;
 use Kotchasan\Template;
+use InertiaKotchasan\Inertia;
 
 /**
  * Render the index page.
@@ -51,6 +52,9 @@ class Controller extends \Kotchasan\Controller
 
     public function execute(Request $request)
     {
-        echo 'red';
+        Inertia::render('Welcome', [
+            'canLogin' => true,
+            'canRegister' => true,
+        ]);
     }
 }

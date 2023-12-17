@@ -28,6 +28,9 @@ define('DB_LOG', false);
 
 // Load Kotchasan Framework
 include '../../Kotchasan/load.php';
+include '../../InertiaKotchasan/src/load.php';
+
+InertiaKotchasan\Inertia::init();
 
 // Initialize Kotchasan Framework and start the web application
 Kotchasan::createWebApplication()->run();
