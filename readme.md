@@ -55,10 +55,10 @@ class Controller extends \Kotchasan\Controller
 
 
 ## What's working
-- Sending page dynamicly
+- Sending page dynamically
 - Redirects
 
-## What not
+## What's not
 - Layout
 - Shared data
 - Forms submission
