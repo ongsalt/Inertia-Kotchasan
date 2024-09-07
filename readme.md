@@ -13,7 +13,7 @@ Kotchasan repository on packagist haven't been updated for long time now. You ca
 ## Setting up
 I assumed you already have a Kotchasan project. You also (obviously) need node installed as well.
 
-Install vite and all the frontend stuff. Please use look at vite config file from `example/` as a reference.
+Install vite and all the frontend stuff. Please look at vite config file from `example/` as a reference.
 
 Then set `build.rollupOptions.input` to the js entry point. Don't forget to change `base`, `build.outDir` and `build.outDir`. We need to serve it(dist) as static files.
 
